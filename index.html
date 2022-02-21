@@ -39,7 +39,9 @@
         <p>Sign-up for our 30-day trial. No credit card required.</p>
       </header>
       <main>
-        <p class="bold"><div class="pageviews"></div>K Pageviews</p>
+      <section class="pageviews__section">
+        <p class="bold"><div class="pageviews"></div> Pageviews</p>
+      </section>
         <div class="slidecontainer">
           <input
             type="range"
@@ -50,16 +52,19 @@
             id="myRange"
           />
         </div>
+      <section class="pricing__section">
         <h1>$</h1><h1 class="pricing"></h1>
         <p>/month</p>
-        <br />
+      </section>
+        <section class="billing__section">
         <p>Monthly Billing</p>
         <label class="toggle-switch">
-          <input type="checkbox" />
+          <input type="checkbox" style="display:none"/>
           <span class="switch round"></span>
         </label>
         <p>Yearly Billing</p>
-        <p>25% discount</p>
+        <div class="discount">25% discount</div>
+        </section>
         <hr />
         <ul>
           <li>Unlimited websites</li>

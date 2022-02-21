@@ -60,6 +60,22 @@ h1 {
   font-size: 2rem;
 }
 
+/* Sections */
+.pageviews__section {
+  display: flex;
+}
+
+.pricing__section {
+  display: flex;
+}
+
+.billing__section {
+  display: flex;
+}
+
+.discount {
+  display: none;
+}
 /* Toggles */
 .slidecontainer {
   width: 100%; /* Width of the outside container */
