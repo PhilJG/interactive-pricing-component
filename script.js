@@ -29,7 +29,7 @@ slider.oninput = function () {
 };
 
 toggle.addEventListener("click", () => {
-  const onOff = discountLabel.toggle.classlist(hidden);
+  const onOff = discountLabel.toggle;
 });
 
 // const toggleDiscount = function () {
