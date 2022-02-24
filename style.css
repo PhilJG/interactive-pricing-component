@@ -36,6 +36,7 @@ html {
 
 body {
   background-image: url(./images/bg-pattern.svg);
+  background-repeat: no-repeat;
   font-size: 15px;
 }
 
@@ -61,6 +62,8 @@ main {
 
 main {
   padding: 5%;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -81,14 +84,21 @@ button {
   border-radius: 30px;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Sections */
 .pageviews__section {
   display: flex;
+  align-content: space-around;
+  justify-content: center;
 }
 
 .pricing__section {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .billing__section {
@@ -98,8 +108,12 @@ button {
 }
 
 .discount {
-  display: none;
+  color: var(--light-red);
+  background-color: var(--light-grayish-red);
+  padding: 0.5rem;
+  border-radius: 10px;
 }
+
 /* Toggles */
 .slidecontainer {
   width: 100%; /* Width of the outside container */
@@ -114,14 +128,15 @@ button {
   border-radius: 40px;
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
   transition: opacity 0.2s;
+  cursor: grabbing;
 }
 
 /* Mouse-over effects */
 .slider:hover {
-  opacity: 1; /* Fully shown on mouse-over */
+  opacity: 0.7; /* Fully shown on mouse-over */
 }
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
@@ -156,6 +171,7 @@ button {
   display: inline-block;
   width: 60px;
   height: 34px;
+  cursor: pointer;
 }
 
 /* Hide default HTML checkbox */
@@ -213,4 +229,18 @@ input:checked + .switch:before {
 
 .check-icon {
   padding-inline: 1.5rem;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+  .discount--txt {
+    display: none;
+  }
+  .cta{
+    flex-direction: row;
+
 }

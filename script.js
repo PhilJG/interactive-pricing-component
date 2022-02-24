@@ -28,8 +28,9 @@ slider.oninput = function () {
   }
 };
 
-toggle.addEventListener("click", () => {
-  const onOff = discountLabel.toggle;
+toggle.addEventListener("click", function () {
+  discountLabel.classList.toggle("hidden");
+  console.log("switched");
 });
 
 // const toggleDiscount = function () {
