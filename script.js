@@ -4,12 +4,33 @@ const slider = document.getElementById("myRange");
 const pageViews = document.querySelector(".pageviews");
 const pricing = document.querySelector(".pricing");
 const discountLabel = document.querySelector(".discount");
-const toggle = document.querySelector(".switch");
+const toggle = document.querySelector(".checkbox");
 
 let sliderValue = slider.value;
+console.log(toggle.checked);
+
+let price = 16;
+pricing.textContent = price;
 
 pageViews.textContent = sliderValue;
-console.log(sliderValue);
+
+toggle.addEventListener("change", function () {
+  if (this.checked) {
+    discountLabel.classList.remove("hidden");
+    price = price * 0.75;
+    console.log("checked");
+    console.log(price);
+  } else {
+    discountLabel.classList.add("hidden");
+    console.log("unchecked");
+    console.log(price);
+  }
+
+  // console.log("switched");
+
+  // console.log(pricing.textContent * 0.75);
+  // pricing.textContent = pricing.textContent * 0.75;
+});
 
 slider.oninput = function () {
   sliderValue = this.value;
@@ -27,11 +48,6 @@ slider.oninput = function () {
     pricing.textContent = 36.0;
   }
 };
-
-toggle.addEventListener("click", function () {
-  discountLabel.classList.toggle("hidden");
-  console.log("switched");
-});
 
 // const toggleDiscount = function () {
 //   if (toggle.checked === true) {
