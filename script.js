@@ -15,21 +15,15 @@ pricing.textContent = price;
 pageViews.textContent = sliderValue;
 
 toggle.addEventListener("change", function () {
+  let discountPrice = Math.round(price * 0.25);
   if (this.checked) {
     discountLabel.classList.remove("hidden");
-    price = price * 0.75;
-    console.log("checked");
-    console.log(price);
+    price = price - discountPrice;
   } else {
     discountLabel.classList.add("hidden");
-    console.log("unchecked");
-    console.log(price);
+    price = price + discountPrice;
   }
-
-  // console.log("switched");
-
-  // console.log(pricing.textContent * 0.75);
-  // pricing.textContent = pricing.textContent * 0.75;
+  pricing.textContent = price;
 });
 
 slider.oninput = function () {
@@ -37,16 +31,18 @@ slider.oninput = function () {
   pageViews.textContent = sliderValue;
 
   if (sliderValue <= 49) {
-    pricing.textContent = 8;
+    toggle.checked ? (price = 6) : (price = 8);
   } else if (sliderValue >= 50 && sliderValue <= 99) {
-    pricing.textContent = 12.0;
+    toggle.checked ? (price = 9) : (price = 12);
   } else if (sliderValue >= 100 && sliderValue <= 499) {
-    pricing.textContent = 16.0;
+    toggle.checked ? (price = 12) : (price = 16);
   } else if (sliderValue >= 500 && sliderValue <= 999) {
-    pricing.textContent = 24.0;
+    toggle.checked ? (price = 18) : (price = 24);
   } else if (sliderValue >= 1000) {
-    pricing.textContent = 36.0;
+    toggle.checked ? (price = 27) : (price = 36);
   }
+  console.log(price);
+  pricing.textContent = price;
 };
 
 // const toggleDiscount = function () {

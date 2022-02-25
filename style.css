@@ -38,6 +38,7 @@ body {
   background-image: url(./images/bg-pattern.svg);
   background-repeat: no-repeat;
   font-size: 15px;
+  background-color: var(--very-pale-blue);
 }
 
 header {
@@ -55,11 +56,15 @@ header {
 
 .container {
   padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
-  background-color: var(--very-pale-blue);
-  padding: 5%;
+  background-color: var(--white);
+  padding: 0 3rem;
   display: flex;
   flex-direction: column;
 }
@@ -84,6 +89,7 @@ ul {
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  padding-left: none;
 }
 
 li {
@@ -128,6 +134,11 @@ button {
   background-color: var(--light-grayish-red);
   padding: 0.5rem;
   border-radius: 10px;
+  display: flex;
+}
+
+.discount--subtract {
+  display: block;
 }
 
 /* Toggles */
@@ -190,14 +201,15 @@ button {
   cursor: pointer;
 }
 
+.checkbox {
+  display: none;
+}
+
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
-}
-
-.checkbox {
 }
 
 /* The switch */
@@ -259,6 +271,28 @@ input:checked + .switch:before {
 }
 
 @media screen and (min-width: 800px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  ul {
+    padding-left: none;
+  }
+
+  li {
+    text-align: left;
+  }
+
+  .discount--subtract {
+    display: none;
+  }
+
+  .discount--txt {
+    display: block;
+  }
+
   .cta {
     flex-direction: row;
     justify-content: space-between;
