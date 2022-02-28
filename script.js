@@ -31,15 +31,15 @@ slider.oninput = function () {
   pageViews.textContent = sliderValue;
 
   if (sliderValue <= 49) {
-    toggle.checked ? (price = 6) : (price = 8);
+    toggle.checked ? (price = 6.0) : (price = 8.0);
   } else if (sliderValue >= 50 && sliderValue <= 99) {
-    toggle.checked ? (price = 9) : (price = 12);
+    toggle.checked ? (price = 9.0) : (price = 12.0);
   } else if (sliderValue >= 100 && sliderValue <= 499) {
-    toggle.checked ? (price = 12) : (price = 16);
+    toggle.checked ? (price = 12.0) : (price = 16.0);
   } else if (sliderValue >= 500 && sliderValue <= 999) {
-    toggle.checked ? (price = 18) : (price = 24);
+    toggle.checked ? (price = 18.0) : (price = 24.0);
   } else if (sliderValue >= 1000) {
-    toggle.checked ? (price = 27) : (price = 36);
+    toggle.checked ? (price = 27.0) : (price = 36.0);
   }
   console.log(price);
   pricing.textContent = price;

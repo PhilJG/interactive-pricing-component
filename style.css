@@ -62,11 +62,11 @@ header {
   align-items: center;
 }
 
-main {
-  background-color: var(--white);
+.card {
+  background-color: white;
   padding: 0 3rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas: "views" "slider" "price" "billing" "list" "btn";
 }
 
 section {
@@ -89,7 +89,8 @@ ul {
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  padding-left: none;
+  padding-left: 0;
+  grid-area: list;
 }
 
 li {
@@ -100,9 +101,9 @@ button {
   background-color: var(--dark-desaturated-blue);
   color: var(--light-grayish-blue);
   border: none;
-  padding: 1rem 4rem;
   border-radius: 30px;
   height: 3rem;
+  grid-area: btn;
 }
 .hidden {
   display: none;
@@ -115,18 +116,21 @@ button {
   justify-content: center;
   font-size: 0.75rem;
   color: var(--grayish-blue);
+  grid-area: views;
 }
 
 .pricing__section {
   display: flex;
   align-items: center;
   justify-content: center;
+  grid-area: price;
 }
 
 .billing__section {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  grid-area: billing;
 }
 
 .discount {
@@ -143,7 +147,7 @@ button {
 
 /* Toggles */
 .slidecontainer {
-  width: 100%; /* Width of the outside container */
+  grid-area: slider;
 }
 
 /* The slider itself */
@@ -261,16 +265,18 @@ input:checked + .switch:before {
 .discount--txt {
   display: none;
 }
-.check-icon {
-  padding-inline: 1.5rem;
-}
 
-.cta {
+/* .cta {
   display: flex;
   flex-direction: column;
-}
+} */
 
 @media screen and (min-width: 800px) {
+  .card {
+    grid-template-areas: "views price" "slider slider" "billing billing" "list btn";
+    grid-template-columns: 50% 50%;
+  }
+
   .container {
     display: flex;
     justify-content: center;
@@ -293,9 +299,9 @@ input:checked + .switch:before {
     display: block;
   }
 
-  .cta {
+  /* .cta {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
+  } */
 }
